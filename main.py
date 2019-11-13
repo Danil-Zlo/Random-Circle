@@ -40,7 +40,10 @@ class MainWindow(QMainWindow, Ui_Form):
         image = Image.new("RGBA", (500, 500), (0,0,0,0))
         draw = ImageDraw.Draw(image)
         n = random.randint(1,500)
-        draw.ellipse((10, 10, n, n), fill=(0,0,0,0), outline="yellow")
+        r = random.randint(0,255)
+        g = random.randint(0,255)
+        b = random.randint(0,255)
+        draw.ellipse((10, 10, n, n), fill=(0,0,0,0), outline=(r,g,b))
         image.save("test.png", "PNG")
 
         self.pixmap = QPixmap("test.png")
